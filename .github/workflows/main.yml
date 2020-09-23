@@ -16,3 +16,5 @@ jobs:
       - run: g++ -Wall main.cpp
 
       - run: sh ./run_test.sh
+
+      - run: diff output.txt good_output.txt
