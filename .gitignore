@@ -3,4 +3,4 @@ obj/*
 *.cbp
 *.layout
 *.depend
-
+output.txt
