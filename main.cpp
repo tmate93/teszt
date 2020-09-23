@@ -4,8 +4,9 @@ using namespace std;
 
 int main()
 {
-    int a, b;
+    int a, b, sz;
     cin >> a >> b;
-    cout << a << " es " << b << " szorzata: " << a*b << endl;
+    sz=a*b;
+    cout << sz << endl;
     return 0;
 }
