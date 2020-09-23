@@ -4,5 +4,6 @@ IFS=$'\n'
 
 for i in `cat input.txt`
 do
- echo "Szamok: $i, sz: $i" | ./a.out
+	echo "Szamok: $i, sz:"
+	echo "$i" | ./a.out
 done
