@@ -15,4 +15,4 @@ jobs:
 
       - run: g++ -Wall main.cpp
 
-      - run: ./runt_test.sh
+      - run: ./run_test.sh
