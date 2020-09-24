@@ -46,7 +46,6 @@ int main(int argc, char **argv) {
             if (s1.getHp() == 0) std::cout << s2.getName() << " wins. Remained HP: " << s2.getHp() << std::endl;
             if (s2.getHp() == 0) std::cout << s1.getName() << " wins. Remained HP: " << s1.getHp() << std::endl;
 
-            system("pause");
             return 0;
 
         }
