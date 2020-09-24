@@ -1,3 +1,6 @@
+#ifndef SZORNY_H
+#define SZORNY_H
+
 #pragma once
 #include<iostream>
 #include<string>
@@ -20,3 +23,5 @@ private:
 	int dmg;
 
 };
+
+#endif
