@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: CI
 
 on:
@@ -14,3 +15,21 @@ jobs:
       - run: g++ -Wall main.cpp
       - run: bash ./harc.sh
       - run: diff output.txt good_output.txt
+=======
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: g++ -Wall main.cpp
+      - run: ./run_test.sh
+      - run: diff output.txt good_output.txt
+>>>>>>> 8d7541760dda46a45d9c83d7cdbcd4c1e5d560c9
