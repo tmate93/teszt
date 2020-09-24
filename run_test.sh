@@ -5,5 +5,6 @@ IFS=$'\n'
 rm output.txt
 
 for i in `cat input.txt`; do
- echo "$i" >> output.txt
+ echo "Szamok: $i, lko:"
+ echo "$i" | ./a.out
 done
