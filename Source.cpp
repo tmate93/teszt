@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <string>
 
-int sti(char* c)
+/*int sti(char* c)
 {
     std::string arg = c;
     try {
@@ -19,7 +19,7 @@ int sti(char* c)
         std::cerr << "Number out of range: " << arg << '\n';
     }
     return 0;
-}
+}*/
 
 void kiir(const Szorny &s) {
 	std::cout << s.getName() << ": HP: " << s.getHp() << ", DMG: " << s.getDmg() << std::endl;
