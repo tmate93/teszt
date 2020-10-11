@@ -12,17 +12,18 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y valgrind && sudo apt-get install -y cppcheck
       - name: CPPCheck Static Code Analysis
-        run: cppcheck --enable=all ./*.cpp 2> cppcheck_report.txt && cat cppcheck_report.txt && if grep -q "(warning)" "./cppcheck_report.txt"; then exit 1; fi && if grep -q "(error)" "./cppcheck_report.txt"; then exit 1; fi
+        run: cppcheck --enable=all ./*.cpp 2> report.txt && cat report.txt && if grep -q "(warning)" "./report.txt"; then exit 1; fi && if grep -q "(error)" "./report.txt"; then exit 1; fi
       - name: Upload CPPCheck report as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: cppcheck_report
-          path: cppcheck_report.txt
+          name: report
+          path: report.txt
       - name: Build
       - run: g++ -Wall -Werror -std=c++17 *.cpp -o output
       - name: Valgrind memory check
         run: valgrind --error-exitcode=1 ./output
-      - name: I/O test
+      - name: generate output
         run: ./harc.sh 
+      - name: I/O test
         run: diff kimenetek.txt jo_kimenetek.txt
       
