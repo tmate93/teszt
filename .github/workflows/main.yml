@@ -23,6 +23,6 @@ jobs:
       - name: Valgrind memory check
         run: valgrind --error-exitcode=1 ./output
       - name: I/O test
-      - run: ./harc.sh 
-      - run: diff kimenetek.txt jo_kimenetek.txt
+        run: ./harc.sh 
+        run: diff kimenetek.txt jo_kimenetek.txt
       
