@@ -35,7 +35,7 @@ Szorny Szorny::parseUnit(std::string fajlnev) {
     std::ifstream f(fajlnev);
     if (!f.good()) throw 56;
     else {
-        std::string sor = "";
+        std::string sor;
         std::string tmp;
         std::string::size_type i;
 
