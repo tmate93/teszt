@@ -1,6 +1,6 @@
 #include "Szorny.h"
 #include "Kalandor.h"
-#include <stdexcept>
+
 #include <string>
 
 int main(int argc, char ** argv) {
