@@ -1,27 +1,22 @@
-#ifndef SZORNY_H
-#define SZORNY_H
-
 #pragma once
 #include<iostream>
 #include<string>
 #include<fstream>
-#include<vector>
 
-class Szorny
-{
+class Szorny {
+protected:
+	std::string nev;
+    int maxhp;
+    int hp;
+	int dmg;
+    friend class Kalandor;
 public:
-	Szorny(std::string nev, int hp, int dmg) :nev(nev), hp(hp), dmg(dmg) {}
-	Szorny(){}
+	Szorny(std::string nev, int hp, int dmg);
 	int getDmg()const;
+	int getMaxHp() const;
 	int getHp()const;
 	std::string getName()const;
-	void tamad(Szorny &)const;
-	void parseUnit(std::ifstream &);
-private:
-	std::string nev;
-	int hp;
-	int dmg;
+	void tamad(Szorny &);
+	static Szorny parseUnit(const std::string);
 
 };
-
-#endif

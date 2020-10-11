@@ -1,4 +1,5 @@
 #include "Szorny.h"
+#include "Kalandor.h"
 #include <stdexcept>
 #include <string>
 
@@ -20,38 +21,34 @@ int sti(char* c)
     return 0;
 }
 
-/*void kiir(const Szorny &s) {
+void kiir(const Szorny &s) {
 	std::cout << s.getName() << ": HP: " << s.getHp() << ", DMG: " << s.getDmg() << std::endl;
-}*/
+}
 
-int main(int argc, char **argv) {
-    Szorny s1;
-    Szorny s2;
-    try {
-        std::ifstream f1, f2;
-        f1.open(argv[1]);
-        f2.open(argv[2]);
-        if (!f1.good() || !f2.good())
-            throw 56;
-        else {
-            s1.parseUnit(f1);
-            s2.parseUnit(f2);
+int main(int argc, char ** argv) {
+	try {
+		Kalandor s1(Kalandor::parseUnit(argv[1]));
+		Szorny s2 = Szorny::parseUnit(argv[2]);
+		while (s1.getHp() > 0 && s2.getHp() > 0) {
+			s1.tamad(s2);
+			if (s2.getHp() > 0) {
+				s2.tamad(s1);
+			}
+		}
+		if (s1.getHp() == 0) std::cout << s2.getName() << " wins. Remaining HP: " << s2.getHp() << std::endl;
+		if (s2.getHp() == 0) std::cout << s1.getName() << " wins. Remaining HP: " << s1.getHp() << ", current level: " << s1.getLvl() << ", current experience: " << s1.getXp() << std::endl;
 
-            while (s1.getHp() > 0 && s2.getHp() > 0) {
-                s1.tamad(s2);
-                if (s1.getHp() > 0 && s2.getHp() > 0) {
-                    s2.tamad(s1);
-                }
-            }
-            if (s1.getHp() == 0) std::cout << s2.getName() << " wins. Remained HP: " << s2.getHp() << std::endl;
-            if (s2.getHp() == 0) std::cout << s1.getName() << " wins. Remained HP: " << s1.getHp() << std::endl;
+		return 0;
 
-            return 0;
-
+	}
+     catch (int e) {
+        switch(e) {
+            case 56: std::cout << "File does not exist!" << std::endl;
+                break;
+            case 57: std::cout << "Invalid character value!!" << std::endl;
+                break;
         }
-    } catch (int e) {
-        std::cout << "Nem letezo fajl lett megadva!" << std::endl;
-
+		return 0;
     }
 }
 
