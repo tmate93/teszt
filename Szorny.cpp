@@ -31,13 +31,13 @@ void Szorny::tamad(Szorny & a) {
 Szorny Szorny::parseUnit(std::string fajlnev) {
 	int hp, dmg, keyv;
     std::string name;
-    size_t found;
+    std::string::size_type found;
     std::ifstream f(fajlnev);
     if (!f.good()) throw 56;
     else {
         std::string sor;
         std::string tmp;
-        size_t i;
+        std::string::size_type i;
 
         while (!f.eof()) {
             getline(f, sor);
