@@ -1,8 +1,6 @@
 #include "Szorny.h"
 #include "Kalandor.h"
 
-#include <string>
-
 int main(int argc, char ** argv) {
 	try {
 		Kalandor s1 = Kalandor::parseUnit(argv[1]);
@@ -13,8 +11,8 @@ int main(int argc, char ** argv) {
 				s2.tamad(s1);
 			}
 		}
-		if (s1.getHp() == 0) std::cout << s2.getName() << " wins. Remaining HP: " << s2.getHp() << std::endl;
-		if (s2.getHp() == 0) std::cout << s1.getName() << " wins. Remaining HP: " << s1.getHp() << ", current level: " << s1.getLvl() << ", current experience: " << s1.getXp() << std::endl;
+		/*if (s1.getHp() == 0) std::cout << s2.getName() << " wins. Remaining HP: " << s2.getHp() << std::endl;
+		if (s2.getHp() == 0) std::cout << s1.getName() << " wins. Remaining HP: " << s1.getHp() << ", current level: " << s1.getLvl() << ", current experience: " << s1.getXp() << std::endl;*/
 
 		return 0;
 

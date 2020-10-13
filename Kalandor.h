@@ -6,7 +6,7 @@
 
 class Kalandor : public Szorny {
 public:
-	//Kalandor(std::string nev, int hp, int dmg);
+	Kalandor(std::string nev, int hp, int dmg);
 	Kalandor(Szorny sz);
 	int getXp() const;
 	int getLvl() const;

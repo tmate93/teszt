@@ -3,10 +3,10 @@
 
 #define XPTOLVL 100
 
-/*Kalandor::Kalandor(std::string nev, int hp, int dmg) : Szorny(nev, hp, dmg) {
+Kalandor::Kalandor(std::string nev, int hp, int dmg) : Szorny(nev, hp, dmg) {
     lvl = 1;
     xp = 0;
-}*/
+}
 
 Kalandor::Kalandor(Szorny sz)
 	: Szorny(sz.getName(), sz.getHp(), sz.getDmg()), xp(0), lvl(1){}
