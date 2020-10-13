@@ -29,7 +29,7 @@ void Szorny::tamad(Szorny & a) {
 }
 
 Szorny Szorny::parseUnit(std::string fajlnev) {
-	int hp, dmg, keyv;
+    /*int hp, dmg, keyv;
     std::string name;
     std::string::size_type found;
     std::ifstream f(fajlnev);
@@ -85,6 +85,7 @@ Szorny Szorny::parseUnit(std::string fajlnev) {
         f.close();
 
         return Szorny(name, hp, dmg);
-    }
+    }*/
+    return Szorny("a", 100, 10);
 }
 
