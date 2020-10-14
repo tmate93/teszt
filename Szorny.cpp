@@ -86,9 +86,9 @@ Szorny Szorny::parseUnit(const std::string & fajlnev) {
 
         return Szorny(name, hp, dmg);
     }
-    f.close();
+    //f.close();
 }
 
-void Szorny::die() {
+/*void Szorny::die() {
     nev.clear();
-}
+}*/
