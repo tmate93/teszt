@@ -16,7 +16,7 @@ public:
 	int getMaxHp() const;
 	int getHp()const;
 	std::string getName()const;
-	void tamad(Szorny &);
+	void tamad(Szorny *);
 	static Szorny parseUnit(const std::string &fileName);
 	Szorny& operator=(const Szorny&);
 	Szorny(const Szorny& s2) : nev(s2.nev), maxhp(s2.maxhp), hp(s2.hp), dmg(s2.dmg) {};

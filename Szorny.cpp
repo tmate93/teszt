@@ -23,9 +23,9 @@ std::string Szorny::getName()const {
 	return nev;
 }
 
-void Szorny::tamad(Szorny & a) {
-	a.hp = a.hp - this->dmg;
-	if (a.hp < 0) a.hp = 0;
+void Szorny::tamad(Szorny * a) {
+	a->hp = a->hp - this->dmg;
+	if (a->hp < 0) a->hp = 0;
 }
 
 Szorny Szorny::parseUnit(const std::string &fajlnev) {

@@ -10,7 +10,7 @@ public:
 	Kalandor(Szorny sz);
 	int getXp() const;
 	int getLvl() const;
-	void tamad(Szorny &);
+	void tamad(Szorny *);
 	Kalandor& operator=(const Szorny&);
 	int xp;
 	int lvl;
