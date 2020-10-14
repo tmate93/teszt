@@ -9,6 +9,7 @@ protected:
     int maxhp;
     int hp;
 	int dmg;
+	void die();
     friend class Kalandor;
 public:
 	Szorny(std::string nev, int hp, int dmg);

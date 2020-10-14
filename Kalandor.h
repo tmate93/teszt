@@ -11,7 +11,6 @@ public:
 	int getXp() const;
 	int getLvl() const;
 	void tamad(Szorny &);
-	static Kalandor parseUnit(const std::string);
 private:
 	int xp;
 	int lvl;
