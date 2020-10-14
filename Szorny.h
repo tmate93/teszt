@@ -9,7 +9,6 @@ protected:
     int maxhp;
     int hp;
 	int dmg;
-	void die();
     friend class Kalandor;
 public:
 	Szorny(std::string nev, int hp, int dmg);
@@ -19,5 +18,6 @@ public:
 	std::string getName()const;
 	void tamad(Szorny &);
 	static Szorny parseUnit(const std::string);
+	void die();
 
 };
