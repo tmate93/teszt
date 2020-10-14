@@ -18,5 +18,6 @@ public:
 	std::string getName()const;
 	void tamad(Szorny &);
 	static Szorny parseUnit(const std::string);
+	Szorny& operator=(const Szorny&);
 
 };
