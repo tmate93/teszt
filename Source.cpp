@@ -1,7 +1,7 @@
 #include "Szorny.h"
 #include "Kalandor.h"
 
-int main(int argc, char ** argv) {
+int main(int argc, char *argv[]) {
 	try {
 		Kalandor s1(Szorny::parseUnit(argv[2])) ;
 		Szorny s2 = Szorny::parseUnit(argv[2]);
