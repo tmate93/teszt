@@ -29,7 +29,7 @@ void Szorny::tamad(Szorny & a) {
 }
 
 Szorny Szorny::parseUnit(const std::string &fajlnev) {
-    /*int hp, dmg, keyv;
+    int hp, dmg, keyv;
     std::string name;
     std::string::size_type found;
     std::ifstream f(fajlnev);
@@ -84,49 +84,7 @@ Szorny Szorny::parseUnit(const std::string &fajlnev) {
     }
     f.close();
 
-    return Szorny(name, hp, dmg);*/
-
-    std::string tmpString, name = "";
-    double health, damage = 0;
-    std::string line = "" , searchTerm;
-    std::size_t searchResult;
-    std::ifstream file(fajlnev);
-    int linecounter = 0;
-
-    if(!file.is_open()){
-        throw "The file is missing";
-    }
-
-    while (std::getline(file,line))
-    {
-        searchTerm = "\"name\" : ";
-        searchResult = line.find(searchTerm);
-        if(searchResult != std::string::npos){
-        tmpString = line.substr((searchResult+searchTerm.size()+1));
-        if(linecounter<=2){
-        tmpString.resize(tmpString.size()-2);
-        }
-        else{
-            tmpString.resize(tmpString.size()-1);
-        }
-        name = tmpString;
-        }
-
-        searchTerm ="\"dmg\" : ";
-        searchResult = line.find(searchTerm);
-        if(searchResult != std::string::npos){
-            tmpString = line.substr(searchResult+searchTerm.size());
-            damage = std::stod(tmpString);
-        }
-        searchTerm = "\"hp\" : ";
-        searchResult = line.find(searchTerm);
-        if(searchResult != std::string::npos){
-            tmpString = line.substr(searchResult+searchTerm.size());
-            health = std::stod(tmpString);
-        }
-        linecounter++;
-    }
-    return Szorny(name, health, damage);
+    return Szorny(name, hp, dmg);
 }
 
 Szorny& Szorny::operator=(const Szorny &szorny) {
