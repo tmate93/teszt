@@ -17,7 +17,6 @@ public:
 	int getHp()const;
 	std::string getName()const;
 	void tamad(Szorny &);
-	static Szorny parseUnit(const std::string &);
-	//void die();
+	static Szorny parseUnit(const std::string);
 
 };
