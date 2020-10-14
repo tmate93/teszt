@@ -19,5 +19,6 @@ public:
 	void tamad(Szorny &);
 	static Szorny parseUnit(const std::string);
 	Szorny& operator=(const Szorny&);
+	Szorny(const Szorny& s2) : nev(s2.nev), maxhp(s2.maxhp), hp(s2.hp), dmg(s2.dmg) {};
 
 };
