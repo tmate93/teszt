@@ -41,10 +41,10 @@ void Kalandor::tamad(Szorny & a) {
 }
 
 Kalandor& Kalandor::operator=(const Szorny &szorny) {
-    this->maxhp = szorny.maxhp;
-    this->hp = szorny.hp;
-    this->dmg = szorny.dmg;
-    this->nev = szorny.nev;
+    this->maxhp = szorny.getMaxHp();
+    this->hp = szorny.getHp();
+    this->dmg = szorny.getDmg();
+    this->nev = szorny.getName();
     this->xp = 0;
     this->lvl = 1;
     return *this;

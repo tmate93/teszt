@@ -89,9 +89,9 @@ Szorny Szorny::parseUnit(std::string fajlnev) {
 }
 
 Szorny& Szorny::operator=(const Szorny &szorny) {
-    this->maxhp = szorny.maxhp;
-    this->hp = szorny.hp;
-    this->dmg = szorny.dmg;
-    this->nev = szorny.nev;
+    this->maxhp = szorny.getMaxHp();
+    this->hp = szorny.getHp();
+    this->dmg = szorny.getDmg();
+    this->nev = szorny.getName();
     return *this;
 }
