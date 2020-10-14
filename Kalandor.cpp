@@ -34,10 +34,10 @@ void Kalandor::xpGain() {
     }
 }
 
-void Kalandor::tamad(Szorny * a) {
-	a->hp = a->hp - this->dmg;
+void Kalandor::tamad(Szorny & a) {
+	a.hp = a.hp - this->dmg;
 	xpGain();
-	if (a->hp < 0) a->hp = 0;
+	if (a.hp < 0) a.hp = 0;
 }
 
 Kalandor& Kalandor::operator=(const Szorny &szorny) {
@@ -49,3 +49,5 @@ Kalandor& Kalandor::operator=(const Szorny &szorny) {
     this->lvl = 1;
     return *this;
 }
+
+
