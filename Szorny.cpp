@@ -90,5 +90,5 @@ Szorny Szorny::parseUnit(std::string fajlnev) {
 }
 
 void Szorny::die() {
-    delete []nev;
+    nev.clear();
 }
