@@ -28,7 +28,7 @@ void Szorny::tamad(Szorny & a) {
 	if (a.hp < 0) a.hp = 0;
 }
 
-Szorny Szorny::parseUnit(std::string fajlnev) {
+Szorny Szorny::parseUnit(const std::string & fajlnev) {
     int hp, dmg, keyv;
     std::string name;
     std::string::size_type found;
