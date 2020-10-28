@@ -9,7 +9,7 @@ TESTFILES:= Units/Arnykiraly.json Units/Sotetvarazslo.json
 VLGRNDFLAGS:= --leak-check=full --error-exitcode=3
 VLGRNDPARAM:=  ./output $(TESTFILES)
 
-output: $(OBJS)
+build: $(OBJS)
 	$(CC) $(CFLAGS) -o output $(OBJS)
 
 Jsonparser.o: Jsonparser.cpp
@@ -37,5 +37,5 @@ doc:
 	doxygen doxconf
 
 clean:
-	rm -rf *.o add ./html ./latex
+	rm -rf *.o
 
