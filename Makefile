@@ -1,8 +1,8 @@
-OBJS := Szorny.o Kalandor.o Jsonparser.o Source.o
-CFLAGS := -std=c++17 -Wall -Werror
+OBJS := Jsonparser.o Szorny.o Kalandor.o Source.o
+CFLAGS := -std=c++17 -Wall -Werror -g
 CC := g++
 
-CPPFILES := Szorny.cpp Kalandor.cpp Jsonparser.cpp Source.cpp
+CPPFILES := Jsonparser.cpp Szorny.cpp Kalandor.cpp Source.cpp
 CPPCFLAGS := --enable=all 2> report.txt && cat report.txt && if grep -q "(warning)" "./report.txt"; then exit 1; fi && if grep -q "(error)" "./report.txt"; then exit 1; fi
 
 TESTFILES:= Units/Arnykiraly.json Units/Sotetvarazslo.json
@@ -12,14 +12,14 @@ VLGRNDPARAM:=  ./output $(TESTFILES)
 build: $(OBJS)
 	$(CC) $(CFLAGS) -o output $(OBJS)
 
+Jsonparser.o: Jsonparser.cpp
+	$(CC) $(CFLAGS) Jsonparser.cpp
+
 Szorny.o: Szorny.cpp
 	$(CC) $(CFLAGS) Szorny.cpp
 
 Kalandor.o: Kalandor.cpp
 	$(CC) $(CFLAGS) Kalandor.cpp
-
-Jsonparser.o: Jsonparser.cpp
-	$(CC) $(CFLAGS) Jsonparser.cpp
 
 Source.o: Source.cpp
 	$(CC) $(CFLAGS) Source.cpp
