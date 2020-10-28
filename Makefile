@@ -1,5 +1,5 @@
 OBJS := Szorny.o Kalandor.o Jsonparser.o Source.o
-CFLAGS := -std=c++17 -Wall -Werror -g
+CFLAGS := -std=c++17 -Wall -Werror
 CC := g++
 
 CPPFILES := Szorny.cpp Kalandor.cpp Jsonparser.cpp Source.cpp
