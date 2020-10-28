@@ -22,7 +22,7 @@ jobs:
           path: report.txt
 
       - name: Build
-	run make clean
+        run: make clean
         run: make build
 
       - name: generate output
