@@ -1,0 +1,34 @@
+name: Build_and_test
+
+on:
+  push
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+   
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt-get install -y valgrind && sudo apt-get install -y cppcheck
+      - name: CPPCheck Static Code Analysis
+        run: make cppcheck
+
+      - name: Upload CPPCheck report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: report.txt
+
+      - name: Build
+        run: make build
+
+      - name: generate output
+        run: ./harc.sh 
+
+      - name: I/O test
+        run: diff kimenetek.txt jo_kimenetek.txt
+
+      - name: Valgrind memory check
+        run: make valgrind
