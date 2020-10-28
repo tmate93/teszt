@@ -22,7 +22,7 @@ jobs:
           path: report.txt
 
       - name: Build
-        run: make build
+        run: make output
 
       - name: generate output
         run: ./harc.sh 

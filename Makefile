@@ -1,5 +1,5 @@
 OBJS := Jsonparser.o Szorny.o Kalandor.o Source.o
-CFLAGS := -std=c++17 -Wall -Wextra -g
+CFLAGS := -std=c++17 -Wall -Werror -g
 CC := g++
 
 CPPFILES := Jsonparser.cpp Szorny.cpp Kalandor.cpp Source.cpp
@@ -9,7 +9,7 @@ TESTFILES:= Units/Arnykiraly.json Units/Sotetvarazslo.json
 VLGRNDFLAGS:= --leak-check=full --error-exitcode=3
 VLGRNDPARAM:=  ./output $(TESTFILES)
 
-build: $(OBJS)
+output: $(OBJS)
 	$(CC) $(CFLAGS) -o output $(OBJS)
 
 Jsonparser.o: Jsonparser.cpp
