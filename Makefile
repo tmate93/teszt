@@ -12,16 +12,16 @@ VLGRNDPARAM:=  ./output $(TESTFILES)
 build: $(OBJS)
 	$(CC) $(CFLAGS) -o output $(OBJS)
 
-Jsonparser.o: Jsonparser.cpp
+Jsonparser.o: Jsonparser.cpp Jsonparser.h
 	$(CC) $(CFLAGS) Jsonparser.cpp
 
-Szorny.o: Szorny.cpp
+Szorny.o: Szorny.cpp Szorny.h
 	$(CC) $(CFLAGS) Szorny.cpp
 
-Kalandor.o: Kalandor.cpp
+Kalandor.o: Kalandor.cpp Kalandor.h
 	$(CC) $(CFLAGS) Kalandor.cpp
 
-Source.o: Source.cpp
+Source.o: Source.cpp Szorny.h Kalandor.h
 	$(CC) $(CFLAGS) Source.cpp
 
 cppcheck:
@@ -37,5 +37,5 @@ doc:
 	doxygen doxconf
 
 clean:
-	rm -rf *.o
+	rm -rf *.o add ./html ./latex
 
