@@ -13,16 +13,16 @@ build: $(OBJS)
 	$(CC) $(CFLAGS) -o output $(OBJS)
 
 Jsonparser.o: Jsonparser.cpp Jsonparser.h
-	$(CC) $(CFLAGS) Jsonparser.cpp
+	$(CC) $(CFLAGS) -c Jsonparser.cpp
 
 Szorny.o: Szorny.cpp Szorny.h
-	$(CC) $(CFLAGS) Szorny.cpp
+	$(CC) $(CFLAGS) -c Szorny.cpp
 
 Kalandor.o: Kalandor.cpp Kalandor.h
-	$(CC) $(CFLAGS) Kalandor.cpp
+	$(CC) $(CFLAGS) -c Kalandor.cpp
 
 Source.o: Source.cpp Szorny.h Kalandor.h
-	$(CC) $(CFLAGS) Source.cpp
+	$(CC) $(CFLAGS) -c Source.cpp
 
 cppcheck:
 	cppcheck $(CPPFILES) $(CPPCFLAGS)
@@ -35,7 +35,3 @@ unittest:
 
 doc: 
 	doxygen doxconf
-
-clean:
-	rm -rf *.o add ./html ./latex
-
